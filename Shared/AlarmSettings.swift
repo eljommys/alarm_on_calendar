@@ -14,19 +14,17 @@ struct AlarmSettings: Codable, Equatable, Sendable {
 
         var title: String {
             switch self {
-            case .confirmedOnly: "Solo confirmados"
-            case .all: "Todos los eventos"
+            case .confirmedOnly: String(localized: "Solo confirmados")
+            case .all: String(localized: "Todos los eventos")
             }
         }
 
         var explanation: String {
             switch self {
             case .confirmedOnly:
-                "Pone alarma solo en los eventos que has aceptado y en los tuyos personales. "
-                    + "Los que están pendientes de responder o marcados como «quizá» se saltan."
+                String(localized: "Pone alarma solo en los eventos que has aceptado y en los tuyos personales. Los que están pendientes de responder o marcados como «quizá» se saltan.")
             case .all:
-                "Pone alarma en todos los eventos, los hayas confirmado o no. "
-                    + "Los que has rechazado siguen sin alarma."
+                String(localized: "Pone alarma en todos los eventos, los hayas confirmado o no. Los que has rechazado siguen sin alarma.")
             }
         }
     }
@@ -65,6 +63,17 @@ struct AlarmSettings: Codable, Equatable, Sendable {
     /// Solo contiene los eventos que el usuario ha encendido o apagado a mano.
     /// El resto sigue las reglas automáticas del modo elegido.
     var perEvent: [String: EventOverride] = [:]
+
+    /// Etiqueta legible de una antelación. Vive aquí porque la usan dos pantallas.
+    static func leadLabel(_ minutes: Int) -> String {
+        switch minutes {
+        case 0: String(localized: "Justo a la hora")
+        case 60: String(localized: "1 hora antes")
+        case 90: String(localized: "1 h 30 min antes")
+        case 120: String(localized: "2 horas antes")
+        default: String(localized: "\(minutes) min antes")
+        }
+    }
 
     static let leadMinuteChoices = [0, 1, 2, 5, 10, 15, 20, 30, 45, 60, 90, 120]
     static let snoozeMinuteChoices = [1, 2, 5, 10, 15]

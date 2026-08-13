@@ -32,7 +32,7 @@ struct AlarmLiveActivity: Widget {
                 }
                 DynamicIslandExpandedRegion(.bottom) {
                     VStack(alignment: .leading, spacing: 2) {
-                        Text(context.attributes.metadata?.eventTitle ?? "Evento")
+                        Text(context.attributes.metadata?.eventTitle ?? String(localized: "Evento"))
                             .font(.headline)
                             .lineLimit(1)
                         if let start = context.attributes.metadata?.eventStart {
@@ -71,7 +71,7 @@ private struct LockScreenView: View {
                 .foregroundStyle(tint)
 
             VStack(alignment: .leading, spacing: 3) {
-                Text(metadata?.eventTitle ?? "Evento")
+                Text(metadata?.eventTitle ?? String(localized: "Evento"))
                     .font(.headline)
                     .lineLimit(2)
 

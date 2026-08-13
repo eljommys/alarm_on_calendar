@@ -107,8 +107,8 @@ struct AccountSetupGuideView: View {
 
 private struct GuideSection: View {
     let provider: CalendarProvider
-    let intro: String
-    let steps: [String]
+    let intro: LocalizedStringKey
+    let steps: [LocalizedStringKey]
 
     var body: some View {
         Section {
@@ -120,7 +120,7 @@ private struct GuideSection: View {
                         .frame(width: 22, height: 22)
                         .background(.tint, in: .circle)
 
-                    Text(.init(step))
+                    Text(step)
                         .font(.subheadline)
                         .fixedSize(horizontal: false, vertical: true)
                 }

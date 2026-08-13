@@ -14,13 +14,13 @@ enum EventFilter {
 
         var explanation: String {
             switch self {
-            case .calendarDisabled: "Su calendario está desactivado"
-            case .turnedOff: "La has desactivado para este evento"
-            case .canceled: "El evento está cancelado"
-            case .declined: "Has rechazado la invitación"
-            case .allDay: "Es un evento de todo el día"
-            case .notConfirmed: "Aún no has confirmado tu asistencia"
-            case .alreadyPast: "La hora de la alarma ya ha pasado"
+            case .calendarDisabled: String(localized: "Su calendario está desactivado")
+            case .turnedOff: String(localized: "La has desactivado para este evento")
+            case .canceled: String(localized: "El evento está cancelado")
+            case .declined: String(localized: "Has rechazado la invitación")
+            case .allDay: String(localized: "Es un evento de todo el día")
+            case .notConfirmed: String(localized: "Aún no has confirmado tu asistencia")
+            case .alreadyPast: String(localized: "La hora de la alarma ya ha pasado")
             }
         }
     }

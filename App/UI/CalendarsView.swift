@@ -98,7 +98,7 @@ private struct CalendarRow: View {
                 )) {
                     Text("Usar la general (\(model.settings.defaultLeadMinutes) min)").tag(-1)
                     ForEach(AlarmSettings.leadMinuteChoices, id: \.self) { minutes in
-                        Text(leadLabel(minutes)).tag(minutes)
+                        Text(AlarmSettings.leadLabel(minutes)).tag(minutes)
                     }
                 } label: {
                     Text("Antelación")
@@ -110,13 +110,4 @@ private struct CalendarRow: View {
         .padding(.vertical, 2)
     }
 
-    private func leadLabel(_ minutes: Int) -> String {
-        switch minutes {
-        case 0: "Justo a la hora"
-        case 60: "1 hora antes"
-        case 90: "1 h 30 min antes"
-        case 120: "2 horas antes"
-        default: "\(minutes) min antes"
-        }
-    }
 }

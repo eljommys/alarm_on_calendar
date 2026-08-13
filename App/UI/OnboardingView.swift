@@ -97,7 +97,7 @@ struct OnboardingView: View {
         }
     }
 
-    private var calendarActionTitle: String {
+    private var calendarActionTitle: LocalizedStringKey {
         model.calendars.access == .writeOnly ? "Conceder acceso completo" : "Permitir acceso"
     }
 
@@ -123,10 +123,10 @@ struct PermissionCard: View {
     enum State { case pending, granted, blocked }
 
     let icon: String
-    let title: String
-    let detail: String
+    let title: LocalizedStringKey
+    let detail: LocalizedStringKey
     let state: State
-    let actionTitle: String
+    let actionTitle: LocalizedStringKey
     let action: () -> Void
 
     var body: some View {

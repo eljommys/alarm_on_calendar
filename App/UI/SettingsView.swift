@@ -25,7 +25,7 @@ struct SettingsView: View {
                 Section {
                     Picker("Antelación general", selection: $settingsStore.settings.defaultLeadMinutes) {
                         ForEach(AlarmSettings.leadMinuteChoices, id: \.self) { minutes in
-                            Text(leadLabel(minutes)).tag(minutes)
+                            Text(AlarmSettings.leadLabel(minutes)).tag(minutes)
                         }
                     }
                     Picker("Posponer", selection: $settingsStore.settings.snoozeMinutes) {
@@ -95,13 +95,4 @@ struct SettingsView: View {
         }
     }
 
-    private func leadLabel(_ minutes: Int) -> String {
-        switch minutes {
-        case 0: "Justo a la hora"
-        case 60: "1 hora antes"
-        case 90: "1 h 30 min antes"
-        case 120: "2 horas antes"
-        default: "\(minutes) min antes"
-        }
-    }
 }

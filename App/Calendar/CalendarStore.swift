@@ -219,7 +219,7 @@ final class CalendarStore {
             eventIdentifier: identifier,
             occurrenceStart: start,
             occurrenceEnd: event.endDate ?? start,
-            title: event.title ?? "Evento sin título",
+            title: event.title ?? String(localized: "Evento sin título"),
             location: event.location,
             isAllDay: event.isAllDay,
             status: status(for: event.status),

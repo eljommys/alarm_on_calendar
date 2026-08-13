@@ -1,0 +1,1038 @@
+{
+  "sourceLanguage": "es",
+  "strings": {
+    "": {},
+    " · a mano": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " · manual"
+          }
+        }
+      }
+    },
+    "%@: vinculada": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@: linked"
+          }
+        }
+      }
+    },
+    "%lld": {},
+    "%lld días de margen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld days ahead"
+          }
+        }
+      }
+    },
+    "%lld min": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld min"
+          }
+        }
+      }
+    },
+    "%lld min antes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld min before"
+          }
+        }
+      }
+    },
+    "1 día de margen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 day ahead"
+          }
+        }
+      }
+    },
+    "1 h 30 min antes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 hr 30 min before"
+          }
+        }
+      }
+    },
+    "1 hora antes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 hour before"
+          }
+        }
+      }
+    },
+    "2 horas antes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "2 hours before"
+          }
+        }
+      }
+    },
+    "Abre **Ajustes** en el iPhone.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open **Settings** on your iPhone."
+          }
+        }
+      }
+    },
+    "Abrir Ajustes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Settings"
+          }
+        }
+      }
+    },
+    "Acceso a tu calendario": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Calendar access"
+          }
+        }
+      }
+    },
+    "Ajustes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings"
+          }
+        }
+      }
+    },
+    "Al terminar, asegúrate de que el interruptor de **Calendarios** queda activado.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "When you're done, make sure the **Calendars** switch is turned on."
+          }
+        }
+      }
+    },
+    "Alarma": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alarm"
+          }
+        }
+      }
+    },
+    "Alarma a las %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alarm at %@"
+          }
+        }
+      }
+    },
+    "Alarma para %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alarm for %@"
+          }
+        }
+      }
+    },
+    "Alarmas activas": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Active alarms"
+          }
+        }
+      }
+    },
+    "Alarmas puestas hasta el %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alarms set through %@"
+          }
+        }
+      }
+    },
+    "Alcance": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scope"
+          }
+        }
+      }
+    },
+    "Antelación": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lead time"
+          }
+        }
+      }
+    },
+    "Antelación general": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default lead time"
+          }
+        }
+      }
+    },
+    "Añade tu cuenta de Google o Microsoft en Ajustes de iOS para que aparezcan aquí.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add your Google or Microsoft account in iOS Settings and they'll show up here."
+          }
+        }
+      }
+    },
+    "Aún no has confirmado tu asistencia": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You haven't accepted this invitation yet"
+          }
+        }
+      }
+    },
+    "Baja hasta **Apps** y entra en **Calendario**.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scroll down to **Apps** and open **Calendar**."
+          }
+        }
+      }
+    },
+    "Bienvenido": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welcome"
+          }
+        }
+      }
+    },
+    "Calendarios": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Calendars"
+          }
+        }
+      }
+    },
+    "Calendarios suscritos": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subscribed calendars"
+          }
+        }
+      }
+    },
+    "Comprueba que el interruptor de **Calendarios** queda activado.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check that the **Calendars** switch is turned on."
+          }
+        }
+      }
+    },
+    "Concede primero el acceso al calendario para poder comprobar qué cuentas tienes.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grant calendar access first so we can check which accounts you have."
+          }
+        }
+      }
+    },
+    "Conceder acceso completo": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grant full access"
+          }
+        }
+      }
+    },
+    "Cuando añades una cuenta de Google o Microsoft en Ajustes, iOS se encarga de sincronizar sus calendarios. Esta app se limita a leer lo que iOS ya tiene guardado en el iPhone.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "When you add a Google or Microsoft account in Settings, iOS takes care of syncing its calendars. This app only reads what iOS already keeps on your iPhone."
+          }
+        }
+      }
+    },
+    "Cubierto hasta": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Covered through"
+          }
+        }
+      }
+    },
+    "Cumpleaños": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Birthdays"
+          }
+        }
+      }
+    },
+    "Después de añadir una cuenta, iOS puede tardar un momento en bajar los eventos.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "After adding an account, iOS may take a moment to download the events."
+          }
+        }
+      }
+    },
+    "El evento está cancelado": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The event is cancelled"
+          }
+        }
+      }
+    },
+    "Elige **Google** e inicia sesión con tu cuenta.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose **Google** and sign in with your account."
+          }
+        }
+      }
+    },
+    "Elige **Outlook.com** para una cuenta personal, o **Microsoft Exchange** si te la da tu empresa.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose **Outlook.com** for a personal account, or **Microsoft Exchange** if your employer provides it."
+          }
+        }
+      }
+    },
+    "En el iPhone": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "On My iPhone"
+          }
+        }
+      }
+    },
+    "Es lo que permite que ni tu correo ni tu agenda salgan del dispositivo: la app nunca se conecta a Google ni a Microsoft.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "That's what keeps your email and your calendar on the device: the app never connects to Google or Microsoft."
+          }
+        }
+      }
+    },
+    "Es un evento de todo el día": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "It's an all-day event"
+          }
+        }
+      }
+    },
+    "Esta app no tiene servidor ni se conecta a internet. Tus eventos y tus ajustes se quedan en el iPhone.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This app has no server and never connects to the internet. Your events and your settings stay on your iPhone."
+          }
+        }
+      }
+    },
+    "Estado": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Status"
+          }
+        }
+      }
+    },
+    "Estado de tus cuentas": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your accounts"
+          }
+        }
+      }
+    },
+    "Evento sin título": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Untitled event"
+          }
+        }
+      }
+    },
+    "Eventos de todo el día": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All-day events"
+          }
+        }
+      }
+    },
+    "Eventos revisados": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Events checked"
+          }
+        }
+      }
+    },
+    "Google": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Google"
+          }
+        }
+      }
+    },
+    "Has rechazado la invitación": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You declined this invitation"
+          }
+        }
+      }
+    },
+    "Hoy": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today"
+          }
+        }
+      }
+    },
+    "Inicia sesión y acepta lo que pida el administrador si es una cuenta de trabajo.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sign in and accept whatever your administrator asks for if it's a work account."
+          }
+        }
+      }
+    },
+    "Justo a la hora": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Right on time"
+          }
+        }
+      }
+    },
+    "La has desactivado para este evento": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You turned it off for this event"
+          }
+        }
+      }
+    },
+    "La hora de la alarma ya ha pasado": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The alarm time has already passed"
+          }
+        }
+      }
+    },
+    "Lo denegaste antes, así que el sistema ya no vuelve a preguntar. Hay que activarlo a mano en Ajustes.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You denied it earlier, so the system won't ask again. You'll need to turn it on by hand in Settings."
+          }
+        }
+      }
+    },
+    "Los calendarios suscritos (festivos, deportes…) llegan apagados para no llenarte el día de alarmas.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subscribed calendars (holidays, sports…) start off, so your day doesn't fill up with alarms."
+          }
+        }
+      }
+    },
+    "Los cumpleaños llegan apagados: su alarma sonaría a medianoche.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Birthdays start off: their alarm would ring at midnight."
+          }
+        }
+      }
+    },
+    "Mañana": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tomorrow"
+          }
+        }
+      }
+    },
+    "Microsoft / Exchange": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Microsoft / Exchange"
+          }
+        }
+      }
+    },
+    "Modo": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mode"
+          }
+        }
+      }
+    },
+    "No es un recordatorio: es una alarma que suena aunque tengas el móvil en silencio, con la barra de cuenta atrás en la pantalla de bloqueo.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not a reminder: a real alarm that rings even on silent, with its countdown on the Lock Screen."
+          }
+        }
+      }
+    },
+    "No hay calendarios": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No calendars"
+          }
+        }
+      }
+    },
+    "No hay nada en los próximos %lld días en los calendarios que tienes activados.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nothing in the next %lld days in the calendars you have turned on."
+          }
+        }
+      }
+    },
+    "Otra cuenta CalDAV": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Other CalDAV account"
+          }
+        }
+      }
+    },
+    "Para que suenen aunque tengas el iPhone en silencio o en Concentración.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "So they ring even when your iPhone is on silent or in a Focus mode."
+          }
+        }
+      }
+    },
+    "Para saber qué eventos tienes y a qué hora empiezan.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To know which events you have and when they start."
+          }
+        }
+      }
+    },
+    "Permiso de alarmas": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alarm permission"
+          }
+        }
+      }
+    },
+    "Permitir acceso": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allow access"
+          }
+        }
+      }
+    },
+    "Permitir alarmas": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allow alarms"
+          }
+        }
+      }
+    },
+    "Pone alarma en todos los eventos, los hayas confirmado o no. Los que has rechazado siguen sin alarma.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sets an alarm on every event, whether you accepted it or not. Events you declined still get no alarm."
+          }
+        }
+      }
+    },
+    "Pone alarma solo en los eventos que has aceptado y en los tuyos personales. Los que están pendientes de responder o marcados como «quizá» se saltan.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sets an alarm only on events you accepted and on your own personal ones. Events awaiting your reply or marked “maybe” are skipped."
+          }
+        }
+      }
+    },
+    "Posponer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Snooze"
+          }
+        }
+      }
+    },
+    "Posponer %lld min": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Snooze %lld min"
+          }
+        }
+      }
+    },
+    "Programar con": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schedule"
+          }
+        }
+      }
+    },
+    "Próximos": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Upcoming"
+          }
+        }
+      }
+    },
+    "Puedes darle una antelación distinta a cada calendario desde la pestaña Calendarios.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You can give each calendar its own lead time from the Calendars tab."
+          }
+        }
+      }
+    },
+    "Qué eventos": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Which events"
+          }
+        }
+      }
+    },
+    "Resincronizar ahora": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resync now"
+          }
+        }
+      }
+    },
+    "Sin eventos próximos": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No upcoming events"
+          }
+        }
+      }
+    },
+    "Sin vincular": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not linked"
+          }
+        }
+      }
+    },
+    "Sirve tanto para una cuenta personal de Gmail como para Google Workspace.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Works for both a personal Gmail account and Google Workspace."
+          }
+        }
+      }
+    },
+    "Solo confirmados": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accepted only"
+          }
+        }
+      }
+    },
+    "Su calendario está desactivado": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Its calendar is turned off"
+          }
+        }
+      }
+    },
+    "Toca **Cuentas** y luego **Añadir cuenta**.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap **Accounts**, then **Add Account**."
+          }
+        }
+      }
+    },
+    "Todo el día": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All day"
+          }
+        }
+      }
+    },
+    "Todos los eventos": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All events"
+          }
+        }
+      }
+    },
+    "Tus calendarios entran por iOS, no por la app": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your calendars come in through iOS, not through the app"
+          }
+        }
+      }
+    },
+    "Tus eventos se leen y se procesan dentro del iPhone. La app no tiene servidor ni conexión a internet: nada de tu agenda sale del dispositivo.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your events are read and processed inside your iPhone. The app has no server and no internet connection: nothing from your calendar leaves the device."
+          }
+        }
+      }
+    },
+    "Un evento de todo el día no tiene hora de inicio real, así que su alarma sonaría a medianoche. Actívalo solo si te sirve.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "An all-day event has no real start time, so its alarm would ring at midnight. Turn this on only if that's useful to you."
+          }
+        }
+      }
+    },
+    "Una alarma de verdad antes de cada evento": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A real alarm before every event"
+          }
+        }
+      }
+    },
+    "Usar la general (%lld min)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use the default (%lld min)"
+          }
+        }
+      }
+    },
+    "Vale para Outlook.com, Hotmail, Microsoft 365 y Exchange de empresa.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Works with Outlook.com, Hotmail, Microsoft 365 and company Exchange."
+          }
+        }
+      }
+    },
+    "Vinculada": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Linked"
+          }
+        }
+      }
+    },
+    "Vincular Google o Microsoft": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Link Google or Microsoft"
+          }
+        }
+      }
+    },
+    "Vincular cuentas": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Link accounts"
+          }
+        }
+      }
+    },
+    "Volver a buscar calendarios": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Look for calendars again"
+          }
+        }
+      }
+    },
+    "Volver a comprobar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check again"
+          }
+        }
+      }
+    },
+    "Volver al automático": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Back to automatic"
+          }
+        }
+      }
+    },
+    "Vuelve aquí y tus calendarios de Google aparecerán en la pestaña Calendarios.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Come back here and your Google calendars will appear in the Calendars tab."
+          }
+        }
+      }
+    },
+    "iCloud": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iCloud"
+          }
+        }
+      }
+    },
+    "iOS limita cuántas alarmas puede tener una app a la vez. Las siguientes se irán programando solas conforme pasen estas.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iOS limits how many alarms an app can have at once. The rest get scheduled automatically as these pass."
+          }
+        }
+      }
+    },
+    "iOS solo permite abrir la ficha de esta app en Ajustes. Desde ahí, vuelve atrás una pantalla y busca **Apps → Calendario → Cuentas**.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iOS only allows opening this app's own page in Settings. From there, go back one screen and look for **Apps → Calendar → Accounts**."
+          }
+        }
+      }
+    },
+    "¿Cómo añado Google o Microsoft?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How do I add Google or Microsoft?"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

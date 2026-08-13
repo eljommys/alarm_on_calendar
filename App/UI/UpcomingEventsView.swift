@@ -86,8 +86,8 @@ struct UpcomingEventsView: View {
 
     private func dayTitle(_ day: Date) -> String {
         let calendar = Calendar.current
-        if calendar.isDateInToday(day) { return "Hoy" }
-        if calendar.isDateInTomorrow(day) { return "Mañana" }
+        if calendar.isDateInToday(day) { return String(localized: "Hoy") }
+        if calendar.isDateInTomorrow(day) { return String(localized: "Mañana") }
         return day.formatted(.dateTime.weekday(.wide).day().month(.wide)).localizedCapitalized
     }
 }
@@ -104,7 +104,7 @@ private struct EventRow: View {
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
             Text(event.isAllDay
-                 ? "Todo el día"
+                 ? String(localized: "Todo el día")
                  : event.occurrenceStart.formatted(date: .omitted, time: .shortened))
                 .font(.subheadline.weight(.medium).monospacedDigit())
                 .frame(width: 74, alignment: .trailing)

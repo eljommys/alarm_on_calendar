@@ -1,0 +1,276 @@
+{
+  "sourceLanguage": "es",
+  "strings": {
+    "%lld min antes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld min before"
+          }
+        }
+      }
+    },
+    "1 h 30 min antes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 hr 30 min before"
+          }
+        }
+      }
+    },
+    "1 hora antes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 hour before"
+          }
+        }
+      }
+    },
+    "2 horas antes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "2 hours before"
+          }
+        }
+      }
+    },
+    "Ahora": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Now"
+          }
+        }
+      }
+    },
+    "Alarma": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alarm"
+          }
+        }
+      }
+    },
+    "Aún no has confirmado tu asistencia": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You haven't accepted this invitation yet"
+          }
+        }
+      }
+    },
+    "Calendarios suscritos": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subscribed calendars"
+          }
+        }
+      }
+    },
+    "Cumpleaños": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Birthdays"
+          }
+        }
+      }
+    },
+    "El evento está cancelado": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The event is cancelled"
+          }
+        }
+      }
+    },
+    "Empieza a las %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Starts at %@"
+          }
+        }
+      }
+    },
+    "En el iPhone": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "On My iPhone"
+          }
+        }
+      }
+    },
+    "Es un evento de todo el día": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "It's an all-day event"
+          }
+        }
+      }
+    },
+    "Evento": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Event"
+          }
+        }
+      }
+    },
+    "Google": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Google"
+          }
+        }
+      }
+    },
+    "Has rechazado la invitación": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You declined this invitation"
+          }
+        }
+      }
+    },
+    "Justo a la hora": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Right on time"
+          }
+        }
+      }
+    },
+    "La has desactivado para este evento": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You turned it off for this event"
+          }
+        }
+      }
+    },
+    "La hora de la alarma ya ha pasado": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The alarm time has already passed"
+          }
+        }
+      }
+    },
+    "Microsoft / Exchange": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Microsoft / Exchange"
+          }
+        }
+      }
+    },
+    "Otra cuenta CalDAV": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Other CalDAV account"
+          }
+        }
+      }
+    },
+    "Pone alarma en todos los eventos, los hayas confirmado o no. Los que has rechazado siguen sin alarma.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sets an alarm on every event, whether you accepted it or not. Events you declined still get no alarm."
+          }
+        }
+      }
+    },
+    "Pone alarma solo en los eventos que has aceptado y en los tuyos personales. Los que están pendientes de responder o marcados como «quizá» se saltan.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sets an alarm only on events you accepted and on your own personal ones. Events awaiting your reply or marked “maybe” are skipped."
+          }
+        }
+      }
+    },
+    "Solo confirmados": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accepted only"
+          }
+        }
+      }
+    },
+    "Su calendario está desactivado": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Its calendar is turned off"
+          }
+        }
+      }
+    },
+    "Todos los eventos": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All events"
+          }
+        }
+      }
+    },
+    "iCloud": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iCloud"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

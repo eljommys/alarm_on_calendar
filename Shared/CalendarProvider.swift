@@ -16,13 +16,13 @@ enum CalendarProvider: String, Sendable, Hashable, CaseIterable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .apple: "iCloud"
-        case .google: "Google"
-        case .microsoft: "Microsoft / Exchange"
-        case .otherCalDAV: "Otra cuenta CalDAV"
-        case .local: "En el iPhone"
-        case .subscribed: "Calendarios suscritos"
-        case .birthdays: "Cumpleaños"
+        case .apple: String(localized: "iCloud")
+        case .google: String(localized: "Google")
+        case .microsoft: String(localized: "Microsoft / Exchange")
+        case .otherCalDAV: String(localized: "Otra cuenta CalDAV")
+        case .local: String(localized: "En el iPhone")
+        case .subscribed: String(localized: "Calendarios suscritos")
+        case .birthdays: String(localized: "Cumpleaños")
         }
     }
 

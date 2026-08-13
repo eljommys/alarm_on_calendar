@@ -11,6 +11,12 @@ struct AlarmOnCalendarApp: App {
             RootView()
                 .environment(delegate.model)
                 .task {
+                    #if DEBUG
+                    // Solo con el argumento -seed-screenshot-data, para las capturas.
+                    if ScreenshotSeeder.isRequested {
+                        ScreenshotSeeder.seed(locale: Locale.current.identifier)
+                    }
+                    #endif
                     await delegate.model.bootstrap()
                     BackgroundRefresh.schedule()
                 }

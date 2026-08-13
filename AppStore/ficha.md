@@ -159,3 +159,129 @@ PRIVACIDAD
 La app no realiza ninguna conexión de red. El binario no enlaza CFNetwork ni
 Network.framework y no incluye dependencias de terceros.
 ```
+
+---
+---
+
+# App Store listing (en-US)
+
+## Name · límite 30
+
+```
+Calendar Alarm
+```
+
+Alternativa con más peso para búsquedas:
+
+```
+Calendar Alarm: Real Alarms
+```
+
+---
+
+## Subtitle · límite 30
+
+```
+Real alarms for your calendar
+```
+
+---
+
+## Promotional text · límite 170
+
+```
+Calendar alerts stay quiet when your phone is on silent. This app sets a real alarm before each event, and you switch it on or off event by event.
+```
+
+---
+
+## Keywords · límite 100
+
+```
+clock,event,meeting,appointment,reminder,silent,focus,schedule,work,ring,wake,agenda
+```
+
+---
+
+## Description · límite 4000
+
+```
+Not another reminder. A real alarm.
+
+Calendar alerts are notifications: if your iPhone is on silent or in a Focus mode, you simply don't hear them. And you miss the meeting.
+
+Calendar Alarm schedules a real alarm before each event. The kind that rings like your morning alarm, even on silent, and shows up on the Lock Screen with its own countdown.
+
+
+YOU DECIDE WHEN IT RINGS
+
+• Choose the lead time: 5, 10, 30 minutes, an hour… whatever you need.
+• Two modes: an alarm only on events you accepted, or on all of them, accepted or not.
+• A different lead time for each calendar: 15 minutes for Work, 5 for Personal.
+• Snooze, just like your morning alarm.
+
+
+CONTROL EVENT BY EVENT
+
+Every event in the list has its own switch. Set an alarm on that meeting you haven't confirmed yet, or drop the one on a birthday you already remember. Your decision overrides every automatic rule.
+
+And for a meeting that repeats weekly, you can silence just Thursday's without touching the rest.
+
+
+YOUR THREE CALENDARS, IN ONE PLACE
+
+Works with your iCloud calendar, and with Google and Microsoft too (Outlook, Exchange and Microsoft 365).
+
+There is no sign-in anywhere: if those accounts are already added in your iPhone's Settings, the app reads what your phone syncs. And if they aren't, the app includes a step-by-step guide that walks you through it.
+
+
+PRIVACY YOU CAN VERIFY
+
+The app has no server. It never connects to the internet. It doesn't even link the system networking libraries, so technically it cannot send anything anywhere.
+
+Your events are read and processed inside your iPhone and never leave it. No accounts, no sign-up, no ads, no analytics, no tracking, no third-party libraries.
+
+You don't have to take our word for it: the source code is public and anyone can audit it.
+
+
+BUILT FOR PEOPLE WHO CAN'T BE LATE
+
+• Work meetings that start on the hour.
+• Doctor's appointments booked months ahead.
+• Classes, training sessions and shifts.
+• Video calls when you work from home with your phone on silent.
+• School pickup.
+
+
+REQUIREMENTS
+
+Requires iOS 26.1 or later. The app uses AlarmKit, the alarm technology Apple introduced with iOS 26 and the only thing that lets an app other than Clock ring above silent mode and Focus.
+
+The first time you open it, it asks for two permissions: calendar access, to know when your events start, and alarm permission, so it can reach you even with the phone on silent.
+```
+
+---
+
+## Notes for App Review (en-US)
+
+```
+The app schedules alarms with AlarmKit before the user's calendar events.
+
+HOW TO TEST
+1. Grant the two permissions requested on launch (calendar and alarms).
+2. Create an event in the iOS Calendar app starting about 15 minutes from now.
+3. Open the app: the event appears under "Upcoming" with the time its alarm will ring.
+4. The lead time is configurable in the Settings tab; the default is 10 minutes.
+
+No account or credentials are needed: there is no sign-in.
+
+ABOUT GOOGLE AND MICROSOFT
+The app does not connect to Google or Microsoft and implements no OAuth. It reads
+calendars through EventKit, so it shows whichever accounts iOS itself already syncs
+from Settings. On a device without those accounts configured, only local and iCloud
+calendars appear, which is the expected behaviour.
+
+PRIVACY
+The app makes no network requests. The binary links neither CFNetwork nor
+Network.framework and includes no third-party dependencies.
+```

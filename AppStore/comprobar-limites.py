@@ -11,11 +11,18 @@ import sys
 from pathlib import Path
 
 LIMITES = {
+    # Español
     "Nombre": 30,
     "Subtítulo": 30,
     "Texto promocional": 170,
     "Palabras clave": 100,
     "Descripción": 4000,
+    # English
+    "Name": 30,
+    "Subtitle": 30,
+    "Promotional text": 170,
+    "Keywords": 100,
+    "Description": 4000,
 }
 
 ficha = (Path(__file__).parent / "ficha.md").read_text(encoding="utf-8")

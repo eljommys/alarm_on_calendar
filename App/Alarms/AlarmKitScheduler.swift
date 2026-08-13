@@ -76,7 +76,7 @@ final class AlarmKitScheduler: AlarmScheduling {
 
     private static func attributes(for request: AlarmRequest) -> AlarmAttributes<EventAlarmMetadata> {
         let snoozeButton = AlarmButton(
-            text: "Posponer \(request.snoozeMinutes) min",
+            text: LocalizedStringResource("Posponer \(request.snoozeMinutes) min"),
             textColor: .white,
             systemImageName: "zzz"
         )
