@@ -1,4 +1,4 @@
-# Ficha de App Store — Alarma Agenda
+# Ficha de App Store — Alarma en Calendario
 
 Todos los campos verificados contra los límites de App Store Connect con
 `AppStore/comprobar-limites.py`.
@@ -8,15 +8,11 @@ Todos los campos verificados contra los límites de App Store Connect con
 ## Nombre  · límite 30
 
 ```
-Alarma Agenda
+Alarma en Calendario
 ```
 
-Alternativa con más peso para búsquedas, por si prefieres priorizar ASO sobre
-marca (cabe igual):
-
-```
-Alarma Agenda: Calendario
-```
+Ya contiene las dos palabras que más se buscan («alarma» y «calendario»), así que
+no hace falta una variante alternativa para ASO.
 
 ---
 
@@ -57,7 +53,7 @@ No es un recordatorio más. Es una alarma de verdad.
 
 Los avisos del calendario son notificaciones: si tienes el iPhone en silencio o en modo Concentración, no te enteras. Y te pierdes la reunión.
 
-Alarma Agenda programa una alarma real antes de cada evento. De las que suenan como el despertador, aunque el móvil esté en silencio, y aparecen en la pantalla de bloqueo con su cuenta atrás.
+Alarma en Calendario programa una alarma real antes de cada evento. De las que suenan como el despertador, aunque el móvil esté en silencio, y aparecen en la pantalla de bloqueo con su cuenta atrás.
 
 
 TÚ DECIDES CUÁNDO SUENA
@@ -168,13 +164,7 @@ Network.framework y no incluye dependencias de terceros.
 ## Name · límite 30
 
 ```
-Calendar Alarm
-```
-
-Alternativa con más peso para búsquedas:
-
-```
-Calendar Alarm: Real Alarms
+Alarm on Calendar
 ```
 
 ---
@@ -210,7 +200,7 @@ Not another reminder. A real alarm.
 
 Calendar alerts are notifications: if your iPhone is on silent or in a Focus mode, you simply don't hear them. And you miss the meeting.
 
-Calendar Alarm schedules a real alarm before each event. The kind that rings like your morning alarm, even on silent, and shows up on the Lock Screen with its own countdown.
+Alarm on Calendar schedules a real alarm before each event. The kind that rings like your morning alarm, even on silent, and shows up on the Lock Screen with its own countdown.
 
 
 YOU DECIDE WHEN IT RINGS

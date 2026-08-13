@@ -1,60 +1,60 @@
 {
-  "sourceLanguage" : "es",
-  "strings" : {
-    "CFBundleDisplayName" : {
-      "comment" : "Nombre bajo el icono en la pantalla de inicio",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Calendar Alarm"
+  "sourceLanguage": "es",
+  "strings": {
+    "CFBundleDisplayName": {
+      "comment": "Nombre bajo el icono. Corto a propósito: iOS comprime los espacios y trunca por encima de unos 14 caracteres. El nombre largo va en la ficha de la App Store.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cal Alarm"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alarma Agenda"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alarma Cal."
           }
         }
       }
     },
-    "NSAlarmKitUsageDescription" : {
-      "comment" : "Por qué la app necesita programar alarmas",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "We schedule alarms before your events so they ring even when your iPhone is on silent or in a Focus mode."
+    "NSAlarmKitUsageDescription": {
+      "comment": "Por qué la app necesita programar alarmas",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We schedule alarms before your events so they ring even when your iPhone is on silent or in a Focus mode."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Programamos alarmas antes de tus eventos para que suenen aunque tengas el iPhone en silencio o en modo Concentración."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Programamos alarmas antes de tus eventos para que suenen aunque tengas el iPhone en silencio o en modo Concentración."
           }
         }
       }
     },
-    "NSCalendarsFullAccessUsageDescription" : {
-      "comment" : "Por qué la app necesita leer el calendario",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "We need to read your events so we can set an alarm before each one. Everything is processed inside your iPhone: no calendar data ever leaves the device."
+    "NSCalendarsFullAccessUsageDescription": {
+      "comment": "Por qué la app necesita leer el calendario",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We need to read your events so we can set an alarm before each one. Everything is processed inside your iPhone: no calendar data ever leaves the device."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Necesitamos leer tus eventos para poder poner una alarma antes de cada uno. Todo se procesa dentro de tu iPhone: ningún dato de tu agenda sale del dispositivo."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Necesitamos leer tus eventos para poder poner una alarma antes de cada uno. Todo se procesa dentro de tu iPhone: ningún dato de tu agenda sale del dispositivo."
           }
         }
       }
     }
   },
-  "version" : "1.0"
+  "version": "1.0"
 }

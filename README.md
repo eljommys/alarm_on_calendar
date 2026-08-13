@@ -1,4 +1,4 @@
-# Alarma Agenda
+# Alarma en Calendario
 
 Una alarma **de verdad** antes de cada evento de tu calendario: de las que suenan
 aunque el iPhone esté en silencio o en modo Concentración, con la barra de cuenta
