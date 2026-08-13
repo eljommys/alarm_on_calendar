@@ -107,10 +107,15 @@ La primera vez te pedirá dos permisos: acceso al calendario, para saber cuándo
 
 ## Enlaces
 
+La URL de privacidad se indica **por localización**: entra en cada idioma de la
+ficha y pon la que corresponda. Las de soporte y marketing pueden ser la misma
+en ambos.
+
 | Campo en App Store Connect | URL |
 | --- | --- |
 | Support URL (obligatorio) | `https://github.com/eljommys/alarm_on_calendar` |
-| Privacy Policy URL (obligatorio) | `https://eljommys.github.io/alarm_on_calendar/privacy.html` |
+| Privacy Policy URL — español | `https://eljommys.github.io/alarm_on_calendar/privacy.html` |
+| Privacy Policy URL — English | `https://eljommys.github.io/alarm_on_calendar/privacy-en.html` |
 | Marketing URL (opcional) | `https://eljommys.github.io/alarm_on_calendar/` |
 
 ---

@@ -34,7 +34,7 @@ otool -L AlarmOnCalendar | grep -iE "CFNetwork|Network.framework"   # sin result
 Sin OAuth, sin cuentas, sin analítica, sin dependencias de terceros. La etiqueta
 de privacidad de la App Store es «No se recopilan datos».
 
-[Política de privacidad completa](https://eljommys.github.io/alarm_on_calendar/privacy.html)
+Política de privacidad completa: [español](https://eljommys.github.io/alarm_on_calendar/privacy.html) · [English](https://eljommys.github.io/alarm_on_calendar/privacy-en.html)
 
 ### Cómo llegan Google y Microsoft sin red
 

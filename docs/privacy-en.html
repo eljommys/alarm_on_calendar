@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy · Alarm on Calendar</title>
+<link rel="alternate" hreflang="es" href="privacy.html">
+<link rel="alternate" hreflang="en" href="privacy-en.html">
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1c1c1e;
+    --muted: #6b6b70;
+    --rule: #e5e5ea;
+    --accent: #f9792e;
+    --card: #f7f7f9;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f0f11;
+      --fg: #f2f2f7;
+      --muted: #9c9ca3;
+      --rule: #2c2c30;
+      --card: #1a1a1d;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 3rem 1.25rem 5rem;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 44rem; margin: 0 auto; }
+  h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 .35rem; letter-spacing: -.02em; }
+  h2 {
+    font-size: 1.25rem; margin: 2.75rem 0 .75rem;
+    padding-top: 1.5rem; border-top: 1px solid var(--rule); letter-spacing: -.01em;
+  }
+  h3 { font-size: 1rem; margin: 1.75rem 0 .5rem; }
+  .sub { color: var(--muted); margin: 0 0 .25rem; }
+  .date { color: var(--muted); font-size: .9rem; margin: 0 0 2rem; }
+  .lang { font-size: .9rem; margin: 0 0 2rem; }
+  .lead {
+    background: var(--card); border-left: 3px solid var(--accent);
+    padding: 1rem 1.25rem; border-radius: 0 10px 10px 0; margin: 0 0 1rem;
+  }
+  ul { padding-left: 1.25rem; }
+  li { margin: .4rem 0; }
+  a { color: var(--accent); }
+  code {
+    background: var(--card); padding: .1em .4em; border-radius: 5px;
+    font-size: .9em; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  footer {
+    margin-top: 3.5rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--rule); color: var(--muted); font-size: .9rem;
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <h1>Privacy Policy</h1>
+  <p class="sub">Alarm on Calendar — real alarms for your calendar</p>
+  <p class="date">Last updated: 13 August 2026</p>
+  <p class="lang"><a href="privacy.html" hreflang="es">Leer esta política en español</a></p>
+
+  <p class="lead">
+    <strong>Alarm on Calendar collects no data.</strong> The app has no server, it
+    does not connect to the internet, and it sends information nowhere.
+    Everything it does happens inside your iPhone.
+  </p>
+
+  <h2>What data we collect</h2>
+  <p>
+    None. We do not collect, store, transmit or sell any personal information.
+    There are no user accounts, no sign-up, no advertising identifiers, no
+    analytics, no tracking tools and no third-party SDKs.
+  </p>
+
+  <h2>What the app uses, and where it stays</h2>
+
+  <h3>Your calendar events</h3>
+  <p>
+    To schedule an alarm before an event, the app needs to know when that event
+    starts. With your permission it reads your calendars through EventKit,
+    Apple's calendar system built into iOS.
+  </p>
+  <ul>
+    <li>Reading happens <strong>entirely on the device</strong>.</li>
+    <li>Your event data <strong>never leaves the iPhone</strong>.</li>
+    <li>The app <strong>keeps no copy</strong> of your events: it reads them when it needs them.</li>
+    <li>The app <strong>does not modify</strong> your calendars, and never creates events.</li>
+  </ul>
+
+  <h3>Google and Microsoft calendars</h3>
+  <p>
+    The app <strong>does not connect</strong> to Google or to Microsoft, and it
+    never asks you for your credentials. If you have those accounts added under
+    <em>iOS Settings → Apps → Calendar → Accounts</em>, iOS itself syncs them, and
+    the app merely reads what your iPhone already stores locally, exactly as it
+    does with iCloud.
+  </p>
+
+  <h3>Your preferences</h3>
+  <p>
+    Your settings (alarm lead time, the mode you picked, which calendars are
+    enabled, and the alarms you switch on or off event by event) are saved in the
+    app's local storage on your device. They are not synced to iCloud or to any
+    server.
+  </p>
+
+  <h3>Alarms</h3>
+  <p>
+    Alarms are scheduled with AlarmKit, Apple's alarm system. iOS manages them and
+    rings them; we neither take part in that nor receive any information about it.
+  </p>
+
+  <h2>No network access</h2>
+  <p>
+    This is not merely a promise. The app contains no networking code and its
+    binary <strong>does not even link the system networking libraries</strong>
+    (<code>CFNetwork</code>, <code>Network.framework</code>). It uses no
+    third-party dependencies or libraries. It technically cannot send anything
+    anywhere.
+  </p>
+  <p>
+    The source code is public and can be audited at
+    <a href="https://github.com/eljommys/alarm_on_calendar">github.com/eljommys/alarm_on_calendar</a>.
+  </p>
+
+  <h2>Children</h2>
+  <p>
+    The app collects no data from anyone, regardless of age, and is not
+    specifically directed at children under 13.
+  </p>
+
+  <h2>Third parties</h2>
+  <p>
+    We share no data with third parties, quite simply because we have none to
+    share. The app integrates no advertising, measurement or attribution services.
+  </p>
+
+  <h2>Your rights</h2>
+  <p>
+    Since we hold no data about you, there is nothing for us to provide, correct
+    or delete. Uninstalling the app removes the settings stored on your device
+    along with it. You can revoke calendar and alarm permissions whenever you want
+    from iOS Settings.
+  </p>
+
+  <h2>Changes to this policy</h2>
+  <p>
+    If anything changes in the future, this page and its date will be updated. Any
+    substantial change in how data is handled will also be reflected on the App
+    Store listing.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    Questions or problems: <a href="mailto:hello@rackslabs.com">hello@rackslabs.com</a>
+    · <a href="https://github.com/eljommys/alarm_on_calendar/issues">GitHub Issues</a>
+  </p>
+
+  <footer>
+    Alarm on Calendar · Open source on
+    <a href="https://github.com/eljommys/alarm_on_calendar">GitHub</a>
+    · <a href="privacy.html" hreflang="es">Español</a>
+  </footer>
+
+</main>
+</body>
+</html>
