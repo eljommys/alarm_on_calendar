@@ -2,9 +2,9 @@
 """Compone las capturas promocionales de la App Store.
 
 Toma las capturas crudas del simulador y las monta sobre un lienzo de
-1320x2868 (el tamaño de 6,9" que exige App Store Connect) con un titular
-encima. El lienzo se dibuja a tamaño final, así que la captura del
-dispositivo se coloca a escala natural, sin reescalar hacia arriba.
+1242x2688 con un titular encima. El lienzo se dibuja a tamaño final, así que
+la captura del dispositivo se coloca a escala natural, sin reescalar hacia
+arriba.
 
     python3 AppStore/componer-capturas.py <dir-capturas> <dir-salida>
 """
@@ -13,7 +13,7 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
-LIENZO = (1320, 2868)          # 6,9 pulgadas
+LIENZO = (1242, 2688)
 FONDO = (10, 10, 12)
 ACENTO = (249, 121, 46)
 FUENTE = "/System/Library/Fonts/HelveticaNeue.ttc"
@@ -63,46 +63,53 @@ def esquinas_redondeadas(imagen: Image.Image, radio: int) -> Image.Image:
 
 def resplandor(lienzo: Image.Image) -> None:
     """Halo naranja tenue detrás del titular, para que el fondo no sea plano."""
+    ancho, alto = lienzo.size
     capa = Image.new("RGBA", lienzo.size, (0, 0, 0, 0))
     dibujo = ImageDraw.Draw(capa)
-    cx, cy = LIENZO[0] // 2, 430
-    for radio, alfa in [(760, 8), (560, 10), (380, 12), (220, 14)]:
+    cx, cy = ancho // 2, round(alto * 0.150)
+    for f, alfa in [(0.576, 8), (0.424, 10), (0.288, 12), (0.167, 14)]:
+        radio = round(ancho * f)
         dibujo.ellipse([cx - radio, cy - radio // 2, cx + radio, cy + radio // 2],
                        fill=(*ACENTO, alfa))
     lienzo.alpha_composite(capa)
 
 
-def centrar(dibujo, texto, fuente, y, color, interlineado):
+def centrar(dibujo, texto, fuente, y, color, interlineado, ancho_lienzo):
     for linea in texto.split("\n"):
         ancho = dibujo.textbbox((0, 0), linea, font=fuente)[2]
-        dibujo.text(((LIENZO[0] - ancho) // 2, y), linea, font=fuente, fill=color)
+        dibujo.text(((ancho_lienzo - ancho) // 2, y), linea, font=fuente, fill=color)
         y += interlineado
     return y
 
 
-def componer(captura: Path, titular: str, apoyo: str, destino: Path) -> None:
-    lienzo = Image.new("RGBA", LIENZO, (*FONDO, 255))
+def componer(captura: Path, titular: str, apoyo: str, destino: Path, lienzo_px) -> None:
+    W, H = lienzo_px
+    lienzo = Image.new("RGBA", lienzo_px, (*FONDO, 255))
     resplandor(lienzo)
     dibujo = ImageDraw.Draw(lienzo)
 
-    titulo = ImageFont.truetype(FUENTE, 86, index=1)     # Bold
-    sub = ImageFont.truetype(FUENTE, 44, index=0)        # Regular
+    # Medidas proporcionales al ancho, no fijas, por si cambia el lienzo.
+    titulo = ImageFont.truetype(FUENTE, round(W * 0.0652), index=1)   # Bold
+    sub = ImageFont.truetype(FUENTE, round(W * 0.0333), index=0)      # Regular
 
-    y = centrar(dibujo, titular, titulo, 210, (255, 255, 255), 104)
-    centrar(dibujo, apoyo, sub, y + 26, (168, 168, 176), 56)
+    y = centrar(dibujo, titular, titulo, round(H * 0.0732),
+                (255, 255, 255), round(W * 0.0788), W)
+    centrar(dibujo, apoyo, sub, y + round(W * 0.020),
+            (168, 168, 176), round(W * 0.0424), W)
 
     # La captura se reduce, nunca se amplía: así no se ve borrosa.
     foto = Image.open(captura).convert("RGB")
-    ancho = 1040
+    ancho = round(W * 0.7879)
     alto = round(foto.size[1] * ancho / foto.size[0])
+    radio = round(W * 0.0439)
     foto = foto.resize((ancho, alto), Image.LANCZOS)
-    foto = esquinas_redondeadas(foto, 58)
+    foto = esquinas_redondeadas(foto, radio)
 
-    x = (LIENZO[0] - ancho) // 2
-    y = 640
+    x = (W - ancho) // 2
+    y = round(H * 0.2232)
     marco = Image.new("RGBA", (ancho + 6, alto + 6), (0, 0, 0, 0))
     ImageDraw.Draw(marco).rounded_rectangle(
-        [(0, 0), (ancho + 5, alto + 5)], 61, outline=(255, 255, 255, 38), width=3
+        [(0, 0), (ancho + 5, alto + 5)], radio + 3, outline=(255, 255, 255, 38), width=3
     )
     lienzo.alpha_composite(marco, (x - 3, y - 3))
     lienzo.alpha_composite(foto, (x, y))
@@ -125,7 +132,7 @@ def main() -> int:
                 print(f"  falta {captura}")
                 continue
             destino = carpeta / f"{n}.png"
-            componer(captura, titular, apoyo, destino)
+            componer(captura, titular, apoyo, destino, LIENZO)
             print(f"{idioma}/{destino.name}  {Image.open(destino).size}")
     return 0
 
