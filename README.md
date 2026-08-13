@@ -105,9 +105,12 @@ precedencia de la anulación manual, determinismo de los identificadores,
 reconciliación del motor (incluido el comportamiento al tocar el tope) y
 compatibilidad hacia atrás de los ajustes guardados.
 
-Lo que **no** cubren y hay que probar en un iPhone real: que la alarma suene con
-el móvil en silencio y con Concentración activa, y que el RSVP se resuelva bien
-en cuentas reales de Google y Exchange.
+Lo que **no** cubren hay que probarlo en un iPhone real. Comprobado en
+dispositivo: la alarma suena con el móvil en silencio y con Concentración
+activa. Queda por validar que el RSVP se resuelva bien en cuentas reales de
+Google y Exchange — si `isCurrentUser` no se resolviera en alguna, el filtro
+cae del lado seguro y el modo «solo confirmados» se comportaría como «todos»
+en ese calendario.
 
 ## Licencia
 
