@@ -1,0 +1,12 @@
+# El proyecto se genera con XcodeGen a partir de project.yml
+AlarmOnCalendar.xcodeproj/
+
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.xcworkspace/xcuserdata/
+
+# macOS
+.DS_Store
