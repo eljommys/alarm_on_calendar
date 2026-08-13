@@ -60,3 +60,26 @@ struct SettingsStoreTests {
         #expect(store.settings.leadMinutes(calendarIdentifier: "cal-1") == 20)
     }
 }
+
+@Suite("Compatibilidad de ajustes guardados")
+struct SettingsCodableTests {
+
+    /// Ajustes tal y como los guardaba una versión anterior, sin la clave `perEvent`.
+    private let jsonAntiguo = """
+    {"snoozeMinutes":5,"horizonDays":7,"defaultLeadMinutes":10,\
+    "includeAllDayEvents":true,"mode":"confirmedOnly",\
+    "perCalendar":{"cal-1":{"isEnabled":true}}}
+    """
+
+    @Test("Unos ajustes guardados por una versión anterior siguen leyéndose")
+    func compatibilidadHaciaAtras() throws {
+        // Si esto falla, cada campo nuevo que se añada a AlarmSettings borra en
+        // silencio TODAS las preferencias del usuario al actualizar la app.
+        let decoded = try JSONDecoder().decode(AlarmSettings.self, from: Data(jsonAntiguo.utf8))
+
+        #expect(decoded.includeAllDayEvents)
+        #expect(decoded.defaultLeadMinutes == 10)
+        #expect(decoded.perCalendar["cal-1"]?.isEnabled == true)
+        #expect(decoded.perEvent.isEmpty)
+    }
+}

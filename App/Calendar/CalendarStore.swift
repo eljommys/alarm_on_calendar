@@ -130,10 +130,18 @@ final class CalendarStore {
     /// Devuelve las ocurrencias de la ventana pedida, ya traducidas a `EventSnapshot`.
     /// EventKit expande las series recurrentes: cada repetición llega como un `EKEvent`
     /// distinto con el mismo `eventIdentifier` y distinta fecha de inicio.
-    func fetchEvents(horizonDays: Int, from now: Date = Date()) -> [EventSnapshot] {
+    ///
+    /// Se consulta únicamente los calendarios monitorizados: los apagados no aparecen
+    /// siquiera en la lista, y de paso la consulta a EventKit es más barata.
+    func fetchEvents(
+        horizonDays: Int,
+        calendarIDs: Set<String>,
+        from now: Date = Date()
+    ) -> [EventSnapshot] {
         guard access.canRead else { return [] }
 
         let calendars = store.calendars(for: .event)
+            .filter { calendarIDs.contains($0.calendarIdentifier) }
         guard !calendars.isEmpty else { return [] }
 
         let end = Calendar.current.date(byAdding: .day, value: max(1, horizonDays), to: now) ?? now

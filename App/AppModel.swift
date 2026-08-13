@@ -63,8 +63,20 @@ final class AppModel {
         defer { isSyncing = false }
 
         calendars.loadCalendars()
+
+        // Las anulaciones de eventos ya pasados no sirven para nada y el ajuste
+        // crecería indefinidamente si no se limpiaran.
+        var pruned = settingsStore.settings
+        if pruned.pruneEventOverrides(olderThan: Date()) {
+            settingsStore.settings = pruned
+        }
+
         let settings = settingsStore.settings
-        let fetched = calendars.fetchEvents(horizonDays: settings.horizonDays)
+        let enabledIDs = calendars.enabledCalendarIDs(settings: settings)
+        let fetched = calendars.fetchEvents(
+            horizonDays: settings.horizonDays,
+            calendarIDs: enabledIDs
+        )
         events = fetched
 
         do {
@@ -72,7 +84,7 @@ final class AppModel {
             lastOutcome = try await engine.reconcile(
                 events: fetched,
                 settings: settings,
-                enabledCalendarIDs: calendars.enabledCalendarIDs(settings: settings)
+                enabledCalendarIDs: enabledIDs
             )
             lastSyncError = nil
         } catch {
@@ -80,9 +92,43 @@ final class AppModel {
         }
     }
 
+    // MARK: - Estado por evento
+
+    /// Se resuelve en vivo, no desde el último `Outcome`, para que al pulsar el
+    /// interruptor la fila responda al instante sin esperar a la resincronización.
+    func decision(for event: EventSnapshot) -> EventFilter.Decision {
+        EventFilter.decide(
+            event,
+            settings: settings,
+            // La lista solo contiene eventos de calendarios monitorizados.
+            calendarEnabled: true,
+            now: Date()
+        )
+    }
+
+    func hasAlarm(_ event: EventSnapshot) -> Bool {
+        decision(for: event).isScheduled
+    }
+
     /// Motivo por el que un evento concreto no tiene alarma, para explicarlo en la lista.
     func skipReason(for event: EventSnapshot) -> EventFilter.Reason? {
-        lastOutcome?.skipped[event.id]
+        decision(for: event).reason
+    }
+
+    /// `true` si el usuario ha decidido a mano sobre este evento.
+    func isManual(_ event: EventSnapshot) -> Bool {
+        settings.override(for: event) != nil
+    }
+
+    func setAlarm(_ isOn: Bool, for event: EventSnapshot) {
+        settingsStore.settings.setOverride(isOn, for: event)
+        Task { await sync() }
+    }
+
+    /// Devuelve el evento a la regla automática del modo elegido.
+    func clearOverride(for event: EventSnapshot) {
+        settingsStore.settings.setOverride(nil, for: event)
+        Task { await sync() }
     }
 
     func alarmDate(for event: EventSnapshot) -> Date {

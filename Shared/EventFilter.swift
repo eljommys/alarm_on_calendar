@@ -5,6 +5,7 @@ enum EventFilter {
 
     enum Reason: String, Equatable, Sendable {
         case calendarDisabled
+        case turnedOff
         case canceled
         case declined
         case allDay
@@ -14,6 +15,7 @@ enum EventFilter {
         var explanation: String {
             switch self {
             case .calendarDisabled: "Su calendario está desactivado"
+            case .turnedOff: "La has desactivado para este evento"
             case .canceled: "El evento está cancelado"
             case .declined: "Has rechazado la invitación"
             case .allDay: "Es un evento de todo el día"
@@ -45,6 +47,17 @@ enum EventFilter {
     ) -> Decision {
         guard calendarEnabled else { return .skip(.calendarDisabled) }
 
+        let leadMinutes = settings.leadMinutes(calendarIdentifier: event.calendarIdentifier)
+        let fireDate = event.alarmDate(leadMinutes: leadMinutes)
+
+        // La decisión manual manda sobre todas las reglas automáticas: si el usuario
+        // ha puesto alarma a un evento que ha marcado como «quizá», la quiere.
+        // Lo único que no se puede saltar es que la hora ya haya pasado.
+        if let manual = settings.override(for: event) {
+            guard manual else { return .skip(.turnedOff) }
+            return fireDate > now ? .schedule : .skip(.alreadyPast)
+        }
+
         // Un evento cancelado por el organizador no debe despertar a nadie.
         guard event.status != .canceled else { return .skip(.canceled) }
 
@@ -71,8 +84,7 @@ enum EventFilter {
             }
         }
 
-        let leadMinutes = settings.leadMinutes(calendarIdentifier: event.calendarIdentifier)
-        guard event.alarmDate(leadMinutes: leadMinutes) > now else { return .skip(.alreadyPast) }
+        guard fireDate > now else { return .skip(.alreadyPast) }
 
         return .schedule
     }

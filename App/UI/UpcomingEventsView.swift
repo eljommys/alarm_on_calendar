@@ -55,11 +55,7 @@ struct UpcomingEventsView: View {
             ForEach(groupedByDay, id: \.day) { group in
                 Section(dayTitle(group.day)) {
                     ForEach(group.events) { event in
-                        EventRow(
-                            event: event,
-                            alarmDate: model.alarmDate(for: event),
-                            skipReason: model.skipReason(for: event)
-                        )
+                        EventRow(event: event)
                     }
                 }
             }
@@ -99,19 +95,19 @@ struct UpcomingEventsView: View {
 // MARK: - Fila
 
 private struct EventRow: View {
+    @Environment(AppModel.self) private var model
     let event: EventSnapshot
-    let alarmDate: Date
-    let skipReason: EventFilter.Reason?
+
+    private var hasAlarm: Bool { model.hasAlarm(event) }
+    private var isManual: Bool { model.isManual(event) }
 
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
-            VStack(alignment: .trailing, spacing: 2) {
-                Text(event.isAllDay
-                     ? "Todo el día"
-                     : event.occurrenceStart.formatted(date: .omitted, time: .shortened))
-                    .font(.subheadline.weight(.medium).monospacedDigit())
-            }
-            .frame(width: 74, alignment: .trailing)
+            Text(event.isAllDay
+                 ? "Todo el día"
+                 : event.occurrenceStart.formatted(date: .omitted, time: .shortened))
+                .font(.subheadline.weight(.medium).monospacedDigit())
+                .frame(width: 74, alignment: .trailing)
 
             VStack(alignment: .leading, spacing: 4) {
                 Text(event.title)
@@ -122,20 +118,51 @@ private struct EventRow: View {
                     .font(.caption)
                     .foregroundStyle(.secondary)
 
-                if let skipReason {
-                    Label(skipReason.explanation, systemImage: "bell.slash")
-                        .font(.caption2)
-                        .foregroundStyle(.secondary)
-                } else {
-                    Label(
-                        "Alarma a las \(alarmDate.formatted(date: .omitted, time: .shortened))",
-                        systemImage: "alarm.fill"
-                    )
-                    .font(.caption2.weight(.medium))
-                    .foregroundStyle(.tint)
+                status
+            }
+
+            Spacer(minLength: 4)
+
+            Toggle("Alarma para \(event.title)", isOn: Binding(
+                get: { hasAlarm },
+                set: { model.setAlarm($0, for: event) }
+            ))
+            .labelsHidden()
+            .disabled(isPast)
+        }
+        .padding(.vertical, 3)
+        .contextMenu {
+            if isManual {
+                Button {
+                    model.clearOverride(for: event)
+                } label: {
+                    Label("Volver al automático", systemImage: "arrow.uturn.backward")
                 }
             }
         }
-        .padding(.vertical, 3)
+    }
+
+    /// Cuando la hora de la alarma ya pasó no hay nada que activar, así que el
+    /// interruptor se bloquea en vez de mentir prometiendo un aviso imposible.
+    private var isPast: Bool {
+        model.skipReason(for: event) == .alreadyPast
+    }
+
+    @ViewBuilder
+    private var status: some View {
+        if hasAlarm {
+            Label {
+                Text("Alarma a las \(model.alarmDate(for: event).formatted(date: .omitted, time: .shortened))")
+                    + Text(isManual ? " · a mano" : "")
+            } icon: {
+                Image(systemName: "alarm.fill")
+            }
+            .font(.caption2.weight(.medium))
+            .foregroundStyle(.tint)
+        } else if let reason = model.skipReason(for: event) {
+            Label(reason.explanation, systemImage: "bell.slash")
+                .font(.caption2)
+                .foregroundStyle(.secondary)
+        }
     }
 }
