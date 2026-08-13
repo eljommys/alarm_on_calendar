@@ -35,6 +35,7 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.rackslabs.alarmoncalendar
         PRODUCT_NAME: AlarmOnCalendar
+        TARGETED_DEVICE_FAMILY: "1"
         INFOPLIST_FILE: App/Info.plist
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
@@ -52,6 +53,7 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.rackslabs.alarmoncalendar.widget
         PRODUCT_NAME: AlarmOnCalendarWidget
+        TARGETED_DEVICE_FAMILY: "1"
         INFOPLIST_FILE: Widget/Info.plist
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
         SKIP_INSTALL: YES
