@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de privacidad · Alarma Agenda</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1c1c1e;
+    --muted: #6b6b70;
+    --rule: #e5e5ea;
+    --accent: #f9792e;
+    --card: #f7f7f9;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f0f11;
+      --fg: #f2f2f7;
+      --muted: #9c9ca3;
+      --rule: #2c2c30;
+      --card: #1a1a1d;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 3rem 1.25rem 5rem;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 44rem; margin: 0 auto; }
+  h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 .35rem; letter-spacing: -.02em; }
+  h2 {
+    font-size: 1.25rem; margin: 2.75rem 0 .75rem;
+    padding-top: 1.5rem; border-top: 1px solid var(--rule); letter-spacing: -.01em;
+  }
+  h3 { font-size: 1rem; margin: 1.75rem 0 .5rem; }
+  .sub { color: var(--muted); margin: 0 0 .25rem; }
+  .date { color: var(--muted); font-size: .9rem; margin: 0 0 2rem; }
+  .lead {
+    background: var(--card); border-left: 3px solid var(--accent);
+    padding: 1rem 1.25rem; border-radius: 0 10px 10px 0; margin: 0 0 1rem;
+  }
+  ul { padding-left: 1.25rem; }
+  li { margin: .4rem 0; }
+  a { color: var(--accent); }
+  code {
+    background: var(--card); padding: .1em .4em; border-radius: 5px;
+    font-size: .9em; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  footer {
+    margin-top: 3.5rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--rule); color: var(--muted); font-size: .9rem;
+  }
+  .en { margin-top: 4rem; }
+</style>
+</head>
+<body>
+<main>
+
+  <h1>Política de privacidad</h1>
+  <p class="sub">Alarma Agenda — alarmas reales para tu calendario</p>
+  <p class="date">Última actualización: 13 de agosto de 2026</p>
+
+  <p class="lead">
+    <strong>Alarma Agenda no recopila ningún dato.</strong> La aplicación no tiene
+    servidor, no se conecta a internet y no envía información a ninguna parte.
+    Todo lo que hace ocurre dentro de tu iPhone.
+  </p>
+
+  <h2>Qué datos recopilamos</h2>
+  <p>
+    Ninguno. No recogemos, almacenamos, transmitimos ni vendemos información
+    personal. No hay cuentas de usuario, ni registro, ni identificadores de
+    publicidad, ni analítica, ni herramientas de seguimiento, ni SDK de terceros.
+  </p>
+
+  <h2>Qué información utiliza la app y dónde se queda</h2>
+
+  <h3>Eventos de tu calendario</h3>
+  <p>
+    Para poder programar una alarma antes de un evento, la app necesita saber
+    cuándo empieza. Con tu permiso lee tus calendarios a través de EventKit, el
+    sistema de calendario de Apple integrado en iOS.
+  </p>
+  <ul>
+    <li>La lectura ocurre <strong>íntegramente en el dispositivo</strong>.</li>
+    <li>Los datos de tus eventos <strong>nunca salen del iPhone</strong>.</li>
+    <li>La app <strong>no copia ni conserva</strong> tus eventos: los consulta cuando los necesita.</li>
+    <li>La app <strong>no modifica</strong> tus calendarios ni crea eventos.</li>
+  </ul>
+
+  <h3>Calendarios de Google y de Microsoft</h3>
+  <p>
+    La app <strong>no se conecta</strong> a Google ni a Microsoft, y nunca te pide
+    tus credenciales. Si tienes esas cuentas añadidas en <em>Ajustes de iOS →
+    Apps → Calendario → Cuentas</em>, es el propio iOS quien las sincroniza, y la
+    app se limita a leer lo que tu iPhone ya tiene guardado localmente, igual que
+    hace con iCloud.
+  </p>
+
+  <h3>Tus preferencias</h3>
+  <p>
+    Los ajustes (antelación de la alarma, modo elegido, calendarios activados y
+    las alarmas que activas o desactivas evento a evento) se guardan en el
+    almacenamiento local de la app en tu dispositivo. No se sincronizan con
+    iCloud ni con ningún servidor.
+  </p>
+
+  <h3>Alarmas</h3>
+  <p>
+    Las alarmas se programan con AlarmKit, el sistema de alarmas de Apple. Es iOS
+    quien las gestiona y las hace sonar; nosotros no intervenimos ni recibimos
+    información sobre ellas.
+  </p>
+
+  <h2>Ausencia de conexión de red</h2>
+  <p>
+    No se trata solo de una promesa. La aplicación no incluye ningún código de red
+    y su binario <strong>no enlaza siquiera las bibliotecas de red del sistema</strong>
+    (<code>CFNetwork</code>, <code>Network.framework</code>). Tampoco utiliza
+    dependencias ni bibliotecas de terceros. Técnicamente no puede enviar nada a
+    ningún sitio.
+  </p>
+  <p>
+    El código es público y puede auditarse en
+    <a href="https://github.com/eljommys/alarm_on_calendar">github.com/eljommys/alarm_on_calendar</a>.
+  </p>
+
+  <h2>Menores</h2>
+  <p>
+    La app no recopila datos de nadie, con independencia de su edad, y no está
+    dirigida específicamente a menores de 13 años.
+  </p>
+
+  <h2>Terceros</h2>
+  <p>
+    No compartimos datos con terceros, sencillamente porque no tenemos ninguno que
+    compartir. La app no integra servicios de publicidad, medición ni atribución.
+  </p>
+
+  <h2>Tus derechos</h2>
+  <p>
+    Como no guardamos ningún dato tuyo, no hay nada que solicitar, rectificar ni
+    suprimir por nuestra parte. Si desinstalas la aplicación, los ajustes
+    guardados en el dispositivo se eliminan con ella. Los permisos de calendario y
+    de alarmas puedes revocarlos cuando quieras desde Ajustes de iOS.
+  </p>
+
+  <h2>Cambios en esta política</h2>
+  <p>
+    Si en el futuro cambia algo, se actualizará esta página y su fecha. Cualquier
+    cambio sustancial en el tratamiento de datos se reflejará también en la ficha
+    de la App Store.
+  </p>
+
+  <h2>Contacto</h2>
+  <p>
+    Dudas o incidencias: <a href="mailto:hello@rackslabs.com">hello@rackslabs.com</a>
+    · <a href="https://github.com/eljommys/alarm_on_calendar/issues">Incidencias en GitHub</a>
+  </p>
+
+  <!-- ------------------------------------------------------------------ -->
+
+  <div class="en">
+    <h1>Privacy Policy</h1>
+    <p class="sub">Alarma Agenda — real alarms for your calendar</p>
+    <p class="date">Last updated: 13 August 2026</p>
+
+    <p class="lead">
+      <strong>Alarma Agenda collects no data.</strong> The app has no server, makes
+      no network connections, and sends information nowhere. Everything it does
+      happens on your iPhone.
+    </p>
+
+    <h2>Data we collect</h2>
+    <p>
+      None. We do not collect, store, transmit or sell any personal information.
+      There are no user accounts, no sign-up, no advertising identifiers, no
+      analytics, no tracking, and no third-party SDKs.
+    </p>
+
+    <h2>What the app reads, and where it stays</h2>
+    <p>
+      To schedule an alarm before an event, the app needs to know when the event
+      starts. With your permission it reads your calendars through EventKit,
+      Apple's calendar system built into iOS. This happens entirely on-device,
+      your event data never leaves the iPhone, and the app neither stores a copy
+      of your events nor modifies your calendars.
+    </p>
+    <p>
+      The app does <strong>not</strong> connect to Google or Microsoft and never
+      asks for your credentials. If you add those accounts in iOS Settings, iOS
+      itself syncs them and the app simply reads what your iPhone already stores
+      locally.
+    </p>
+    <p>
+      Your preferences are saved in the app's local storage on your device. They
+      are not synced to iCloud or to any server.
+    </p>
+
+    <h2>No network access</h2>
+    <p>
+      This is verifiable, not just a promise: the app contains no networking code
+      and its binary does not even link the system networking libraries
+      (<code>CFNetwork</code>, <code>Network.framework</code>). It uses no
+      third-party dependencies. It technically cannot transmit anything.
+      The source code is public at
+      <a href="https://github.com/eljommys/alarm_on_calendar">github.com/eljommys/alarm_on_calendar</a>.
+    </p>
+
+    <h2>Children</h2>
+    <p>
+      The app collects no data from anyone, regardless of age, and is not directed
+      at children under 13.
+    </p>
+
+    <h2>Your rights</h2>
+    <p>
+      Since we hold no data about you, there is nothing for us to provide, correct
+      or delete. Uninstalling the app removes its locally stored settings. You can
+      revoke calendar and alarm permissions at any time in iOS Settings.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      <a href="mailto:hello@rackslabs.com">hello@rackslabs.com</a> ·
+      <a href="https://github.com/eljommys/alarm_on_calendar/issues">GitHub Issues</a>
+    </p>
+  </div>
+
+  <footer>
+    Alarma Agenda · Código abierto en
+    <a href="https://github.com/eljommys/alarm_on_calendar">GitHub</a>
+  </footer>
+
+</main>
+</body>
+</html>
