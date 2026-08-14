@@ -137,28 +137,45 @@ Es literalmente cierto y coherente con `App/PrivacyInfo.xcprivacy`, que declara
 
 ---
 
-## Notas para el revisor (App Review Information)
+## Notas para el revisor (App Review Information) · límite 4000
+
+Apple rechazó el primer envío por tener este campo vacío. Pégalo **siempre**
+antes de enviar a revisión.
 
 ```
-La app programa alarmas con AlarmKit antes de los eventos del calendario del usuario.
+NO ACCOUNT OR LOGIN IS REQUIRED. Nothing in this app is gated.
 
-CÓMO PROBARLA
-1. Conceda los dos permisos que pide al abrirla (calendario y alarmas).
-2. Cree un evento en la app Calendario de iOS que empiece dentro de unos 15 minutos.
-3. Abra la app: el evento aparecerá en «Próximos» con la hora a la que sonará la alarma.
-4. La antelación se ajusta en la pestaña Ajustes; por defecto son 10 minutos.
+PURPOSE
+Calendar alerts are notifications, so they stay silent when the iPhone is on silent or in a Focus mode and the user misses the meeting. This app schedules a REAL alarm before each calendar event using AlarmKit, which rings above silent mode and Focus and shows a Live Activity countdown on the Lock Screen.
 
-No hace falta cuenta ni credenciales: no hay inicio de sesión.
+HOW TO TEST
+1. On launch the app requests two permissions: calendar access and alarm permission. Both are required.
+2. IMPORTANT: the app READS existing calendar events and never creates them. On a device with no upcoming events, the "Upcoming" list is legitimately empty. Before testing, please open the built-in Calendar app and create one or two events starting later today or tomorrow.
+3. Reopen the app: each event appears under "Upcoming" with the exact time its alarm will ring.
+4. Each row has a switch to turn that event's alarm on or off individually.
+5. "Calendars" tab: enable or disable whole calendars and set a different lead time per calendar.
+6. "Settings" tab: default lead time (10 minutes), snooze duration, and whether alarms apply only to events the user accepted or to every event.
+7. To hear an alarm ring, create an event starting about 12 minutes from now and keep the default 10-minute lead time.
 
-SOBRE GOOGLE Y MICROSOFT
-La app no se conecta a Google ni a Microsoft y no implementa OAuth. Lee los
-calendarios mediante EventKit, así que muestra las cuentas que el propio iOS ya
-sincroniza desde Ajustes. En un dispositivo sin esas cuentas configuradas solo se
-verán los calendarios locales y los de iCloud, lo cual es el comportamiento esperado.
+EXTERNAL SERVICES: NONE
+The app makes no network connections at all. No server, no backend, no analytics, no ads, no attribution, no AI, no payments, no third-party SDK or library. The binary does not even link CFNetwork or Network.framework, which is verifiable with "otool -L".
+Apple frameworks only: EventKit, AlarmKit, ActivityKit, WidgetKit, BackgroundTasks, SwiftUI.
 
-PRIVACIDAD
-La app no realiza ninguna conexión de red. El binario no enlaza CFNetwork ni
-Network.framework y no incluye dependencias de terceros.
+GOOGLE AND MICROSOFT
+The app does NOT connect to Google or Microsoft and implements no OAuth or sign-in. If the user has those accounts added in iOS Settings > Apps > Calendar > Accounts, iOS syncs them and the app simply reads what iOS already stores locally via EventKit, exactly as with iCloud. On a device without those accounts, only local and iCloud calendars appear. That is expected.
+
+REGIONAL DIFFERENCES: NONE
+Identical behaviour in every region. No region-gated content, no geolocation, no server-side configuration, no remote content. Localised in Spanish and English, following the device language.
+
+REGULATED INDUSTRY / THIRD-PARTY MATERIAL: NOT APPLICABLE
+Google, Microsoft, Outlook and Exchange are named descriptively only, to explain which calendar accounts the app can read from iOS. No logos or trademarked assets are used and no affiliation is claimed.
+
+DEVICES TESTED
+iPhone 15 Pro Max on iOS 26.6 (physical device, including the alarm ringing on silent and with Focus active); iPhone 17 and iPhone 17 Pro Max simulators on iOS 26.2.
+Requires iOS 26.1 or later. iPhone only.
+
+SOURCE CODE
+Public and auditable: https://github.com/eljommys/alarm_on_calendar
 ```
 
 ---
