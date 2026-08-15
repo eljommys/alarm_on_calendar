@@ -52,12 +52,21 @@ struct AlarmSettings: Codable, Equatable, Sendable {
     /// Para el resto se aplica el valor por defecto que propone `CalendarStore`.
     var perCalendar: [String: CalendarSetting] = [:]
 
-    /// Decisión manual sobre un evento concreto, que manda sobre las reglas automáticas.
+    /// Ajustes manuales sobre un evento concreto, que mandan sobre las reglas automáticas.
+    ///
+    /// Los dos campos son independientes: se puede personalizar la antelación de un
+    /// evento sin haber tocado su interruptor, y viceversa. Por eso `isEnabled` es
+    /// opcional — `nil` significa «sigue la regla automática del modo».
     struct EventOverride: Codable, Equatable, Sendable {
-        var isEnabled: Bool
+        var isEnabled: Bool?
+        /// Antelación propia en minutos; `nil` cae a la del calendario o a la general.
+        var leadMinutesOverride: Int?
         /// Se guarda la fecha, y no se deduce de la clave, para poder purgar las
         /// anulaciones de eventos pasados sin depender del formato del identificador.
         var occurrenceStart: Date
+
+        /// Una entrada sin contenido no aporta nada y debe eliminarse del diccionario.
+        var isEmpty: Bool { isEnabled == nil && leadMinutesOverride == nil }
     }
 
     /// Solo contiene los eventos que el usuario ha encendido o apagado a mano.
@@ -87,23 +96,54 @@ struct AlarmSettings: Codable, Equatable, Sendable {
         perCalendar[calendarIdentifier]?.leadMinutesOverride ?? defaultLeadMinutes
     }
 
+    /// Antelación efectiva de un evento: la suya propia si la tiene; si no, la de su
+    /// calendario; y si el calendario tampoco tiene, la general de Ajustes.
+    func leadMinutes(for event: EventSnapshot) -> Int {
+        perEvent[event.id]?.leadMinutesOverride
+            ?? leadMinutes(calendarIdentifier: event.calendarIdentifier)
+    }
+
+    /// Antelación propia del evento, sin resolver la cascada. Para pintar la selección.
+    func leadOverride(for event: EventSnapshot) -> Int? {
+        perEvent[event.id]?.leadMinutesOverride
+    }
+
     // MARK: - Anulaciones por evento
 
     /// `nil` significa que el evento sigue la regla automática.
     func override(for event: EventSnapshot) -> Bool? {
-        perEvent[event.id]?.isEnabled
+        // El doble opcional se aplana: entrada ausente y entrada sin decisión de
+        // encendido significan lo mismo hacia fuera.
+        perEvent[event.id]?.isEnabled ?? nil
     }
 
-    /// Pasar `nil` devuelve el evento al comportamiento automático.
+    /// Enciende o apaga a mano la alarma del evento. Pasar `nil` lo devuelve a la
+    /// regla automática sin tocar su antelación personalizada, si la tuviera.
     mutating func setOverride(_ isEnabled: Bool?, for event: EventSnapshot) {
-        if let isEnabled {
-            perEvent[event.id] = EventOverride(
-                isEnabled: isEnabled,
-                occurrenceStart: event.occurrenceStart
-            )
-        } else {
-            perEvent.removeValue(forKey: event.id)
-        }
+        mutateOverride(for: event) { $0.isEnabled = isEnabled }
+    }
+
+    /// Da al evento una antelación propia. Pasar `nil` lo devuelve a la cascada
+    /// calendario → general, sin tocar su encendido manual.
+    mutating func setLeadOverride(_ minutes: Int?, for event: EventSnapshot) {
+        mutateOverride(for: event) { $0.leadMinutesOverride = minutes }
+    }
+
+    /// Borra todos los ajustes manuales del evento de una vez.
+    mutating func clearOverrides(for event: EventSnapshot) {
+        perEvent.removeValue(forKey: event.id)
+    }
+
+    private mutating func mutateOverride(
+        for event: EventSnapshot,
+        _ change: (inout EventOverride) -> Void
+    ) {
+        var entry = perEvent[event.id]
+            ?? EventOverride(occurrenceStart: event.occurrenceStart)
+        change(&entry)
+        // Una entrada vacía se retira: si se acumularan, la purga por fecha las
+        // limpiaría igual, pero mejor no ensuciar los ajustes entre tanto.
+        perEvent[event.id] = entry.isEmpty ? nil : entry
     }
 
     /// Descarta las anulaciones de eventos ya pasados para que el ajuste no crezca sin fin.

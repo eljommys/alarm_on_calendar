@@ -47,7 +47,7 @@ struct SyncEngine: Sendable {
             case .schedule:
                 desired.append(AlarmRequest(
                     event: event,
-                    leadMinutes: settings.leadMinutes(calendarIdentifier: event.calendarIdentifier),
+                    leadMinutes: settings.leadMinutes(for: event),
                     snoozeMinutes: settings.snoozeMinutes
                 ))
             case .skip(let reason):

@@ -125,16 +125,25 @@ final class AppModel {
         Task { await sync() }
     }
 
-    /// Devuelve el evento a la regla automática del modo elegido.
+    /// Antelación propia del evento; `nil` si sigue la cascada calendario → general.
+    func leadOverride(for event: EventSnapshot) -> Int? {
+        settings.leadOverride(for: event)
+    }
+
+    /// Da al evento su propia antelación, o `nil` para devolverlo a la cascada.
+    func setEventLead(_ minutes: Int?, for event: EventSnapshot) {
+        settingsStore.settings.setLeadOverride(minutes, for: event)
+        Task { await sync() }
+    }
+
+    /// Borra todos los ajustes manuales del evento: encendido y antelación.
     func clearOverride(for event: EventSnapshot) {
-        settingsStore.settings.setOverride(nil, for: event)
+        settingsStore.settings.clearOverrides(for: event)
         Task { await sync() }
     }
 
     func alarmDate(for event: EventSnapshot) -> Date {
-        event.alarmDate(
-            leadMinutes: settings.leadMinutes(calendarIdentifier: event.calendarIdentifier)
-        )
+        event.alarmDate(leadMinutes: settings.leadMinutes(for: event))
     }
 
     // MARK: - Disparadores

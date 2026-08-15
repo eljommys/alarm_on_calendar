@@ -100,6 +100,7 @@ private struct EventRow: View {
 
     private var hasAlarm: Bool { model.hasAlarm(event) }
     private var isManual: Bool { model.isManual(event) }
+    private var hasCustomLead: Bool { model.leadOverride(for: event) != nil }
 
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
@@ -132,7 +133,7 @@ private struct EventRow: View {
         }
         .padding(.vertical, 3)
         .contextMenu {
-            if isManual {
+            if isManual || hasCustomLead {
                 Button {
                     model.clearOverride(for: event)
                 } label: {
@@ -151,18 +152,44 @@ private struct EventRow: View {
     @ViewBuilder
     private var status: some View {
         if hasAlarm {
-            Label {
-                Text("Alarma a las \(model.alarmDate(for: event).formatted(date: .omitted, time: .shortened))")
-                    + Text(isManual ? " · a mano" : "")
-            } icon: {
-                Image(systemName: "alarm.fill")
+            // La etiqueta de la alarma es a la vez el menú de antelación: al tocarla
+            // se elige cuánto antes suena, solo para este evento.
+            Menu {
+                leadPicker
+            } label: {
+                Label {
+                    HStack(spacing: 3) {
+                        Text("Alarma a las \(model.alarmDate(for: event).formatted(date: .omitted, time: .shortened))")
+                            + Text(isManual ? " · a mano" : "")
+                        Image(systemName: "chevron.up.chevron.down")
+                            .imageScale(.small)
+                    }
+                } icon: {
+                    Image(systemName: "alarm.fill")
+                }
+                .font(.caption2.weight(.medium))
+                .foregroundStyle(.tint)
             }
-            .font(.caption2.weight(.medium))
-            .foregroundStyle(.tint)
+            .buttonStyle(.plain)
         } else if let reason = model.skipReason(for: event) {
             Label(reason.explanation, systemImage: "bell.slash")
                 .font(.caption2)
                 .foregroundStyle(.secondary)
+        }
+    }
+
+    /// La opción «automática» enseña el valor que se aplicaría, para que elegirla
+    /// nunca sea un salto a ciegas.
+    private var leadPicker: some View {
+        Picker("Antelación", selection: Binding(
+            get: { model.leadOverride(for: event) ?? -1 },
+            set: { model.setEventLead($0 < 0 ? nil : $0, for: event) }
+        )) {
+            Text("Automática (\(model.settings.leadMinutes(calendarIdentifier: event.calendarIdentifier)) min)")
+                .tag(-1)
+            ForEach(AlarmSettings.leadMinuteChoices, id: \.self) { minutes in
+                Text(AlarmSettings.leadLabel(minutes)).tag(minutes)
+            }
         }
     }
 }

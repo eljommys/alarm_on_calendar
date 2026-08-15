@@ -47,8 +47,7 @@ enum EventFilter {
     ) -> Decision {
         guard calendarEnabled else { return .skip(.calendarDisabled) }
 
-        let leadMinutes = settings.leadMinutes(calendarIdentifier: event.calendarIdentifier)
-        let fireDate = event.alarmDate(leadMinutes: leadMinutes)
+        let fireDate = event.alarmDate(leadMinutes: settings.leadMinutes(for: event))
 
         // La decisión manual manda sobre todas las reglas automáticas: si el usuario
         // ha puesto alarma a un evento que ha marcado como «quizá», la quiere.

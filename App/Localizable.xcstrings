@@ -223,6 +223,16 @@
         }
       }
     },
+    "Automática (%lld min)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automatic (%lld min)"
+          }
+        }
+      }
+    },
     "Añade tu cuenta de Google o Microsoft en Ajustes de iOS para que aparezcan aquí.": {
       "localizations": {
         "en": {
