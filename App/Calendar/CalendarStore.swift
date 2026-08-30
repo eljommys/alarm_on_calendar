@@ -85,6 +85,21 @@ final class CalendarStore {
         return access
     }
 
+    /// Descarta la caché interna de EventKit.
+    ///
+    /// **Imprescindible antes de cada lectura.** `EKEventStore` sirve una instantánea
+    /// cacheada: si el usuario mueve un evento en la app Calendario, este almacén
+    /// sigue devolviendo la hora ANTIGUA hasta que se le llama a `reset()`. Sin esto,
+    /// la alarma se quedaba clavada en la hora vieja aunque el evento se moviera.
+    ///
+    /// Es seguro llamarlo aquí porque no conservamos ningún `EKEvent` vivo: se
+    /// traducen a `EventSnapshot` en el acto, y `reset()` solo invalida los objetos
+    /// de EventKit que se estén reteniendo.
+    func refresh() {
+        guard access.canRead else { return }
+        store.reset()
+    }
+
     // MARK: - Calendarios
 
     func loadCalendars() {

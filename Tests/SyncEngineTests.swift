@@ -142,3 +142,31 @@ struct SyncEngineTests {
         #expect(outcome.scheduled == 2)
     }
 }
+
+@Suite("Eventos movidos de hora")
+struct MovedEventTests {
+
+    /// Reproduce el caso real: el usuario mueve un evento en la app Calendario.
+    @Test("Mover un evento retira la alarma vieja y pone otra a la hora nueva")
+    func moverEventoMueveLaAlarma() async throws {
+        let antes = makeEvent(id: "reunion", startingIn: 120)
+        let vieja = AlarmRequest(event: antes, leadMinutes: 10, snoozeMinutes: 5)
+        let scheduler = FakeScheduler(preloaded: [vieja.id])
+
+        // El mismo evento, ahora una hora más tarde.
+        let despues = makeEvent(id: "reunion", startingIn: 180)
+
+        let outcome = try await SyncEngine(scheduler: scheduler).reconcile(
+            events: [despues],
+            settings: AlarmSettings(),
+            enabledCalendarIDs: ["cal-trabajo"],
+            now: referenceNow
+        )
+
+        #expect(outcome.canceled == 1, "la alarma de la hora antigua debe retirarse")
+        #expect(outcome.scheduled == 1)
+        let programadas = await scheduler.scheduledRequests()
+        #expect(programadas.count == 1)
+        #expect(programadas[0].fireDate == despues.occurrenceStart.addingTimeInterval(-600))
+    }
+}

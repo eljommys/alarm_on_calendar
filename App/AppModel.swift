@@ -20,6 +20,9 @@ final class AppModel {
     private(set) var alarmAuthorization: AlarmManager.AuthorizationState = .notDetermined
     private(set) var lastSyncError: String?
 
+    /// Marca que llegó una petición de sincronización mientras había otra en curso.
+    private var syncPending = false
+
     var settings: AlarmSettings { settingsStore.settings }
 
     /// `true` cuando ya tenemos los dos permisos y podemos trabajar.
@@ -58,10 +61,29 @@ final class AppModel {
     // MARK: - Sincronización
 
     func sync() async {
-        guard isReady, !isSyncing else { return }
+        guard isReady else { return }
+
+        // Un cambio de calendario puede llegar justo mientras se sincroniza. Antes se
+        // descartaba en silencio y la alarma se quedaba en la hora vieja hasta el
+        // siguiente disparador; ahora se anota y se atiende al terminar.
+        guard !isSyncing else {
+            syncPending = true
+            return
+        }
+
         isSyncing = true
         defer { isSyncing = false }
 
+        repeat {
+            syncPending = false
+            await performSync()
+        } while syncPending
+    }
+
+    private func performSync() async {
+        // EventKit cachea: sin esto, un evento movido fuera de la app se sigue
+        // leyendo con su hora antigua.
+        calendars.refresh()
         calendars.loadCalendars()
 
         // Las anulaciones de eventos ya pasados no sirven para nada y el ajuste
